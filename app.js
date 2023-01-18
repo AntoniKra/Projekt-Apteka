@@ -11,7 +11,7 @@ const days = [
 ];
 const closeHour = 19;
 const closeMinutes = 59;
-const closeSeconds = 60;
+const closeSeconds = 59;
 const clock = () => {
   const dateTime = new Date();
 
