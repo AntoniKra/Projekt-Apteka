@@ -7,6 +7,7 @@
 
 body {
   background-color: rgb(53, 51, 51);
+
   width: 100vw;
 }
 main {
@@ -41,4 +42,14 @@ aside {
 }
 .counter-container span {
   color: red;
+}
+
+nav {
+  display: flex;
+  width: 100vw;
+  background-color: rgb(136, 4, 4);
+  height: 77px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
