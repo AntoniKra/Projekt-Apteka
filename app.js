@@ -6,7 +6,7 @@ const days = [
   "Środa",
   "Czwartek",
   "Piątek",
-  "Sobota ",
+  "Sobota",
   "Niedziela ",
 ];
 const closeHour = 19;
