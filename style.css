@@ -34,11 +34,12 @@ aside {
   width: 20%;
 }
 .counter-container {
-  width: 30%;
+  width: 60%;
   height: 90%;
   text-align: center;
   font-size: 40px;
 }
+
 .counter-container span {
   color: red;
 }

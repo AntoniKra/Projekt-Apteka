@@ -1,16 +1,16 @@
 const clock = () => {
-  const counterContainer = document.querySelector(".counter-container");
   const pCounterContainer = document.querySelector(".counter-container p");
   const days = [
-    "Empty",
+    "Niedziela",
     "Poniedziałek",
     "Wtorek",
     "Środa",
     "Czwartek",
     "Piątek",
     "Sobota",
-    "Niedziela ",
+    "Emn ",
   ];
+  pCounterContainer.innerHTML = "Do zamknięcia pozostało:";
   let closeHour = 0;
   let closeMinutes = 0;
   let closeSeconds = 0;
@@ -18,7 +18,7 @@ const clock = () => {
   let day = dateTime.getDay();
 
   let currentDay;
-  for (let i = 0; i < days.length; i++) {
+  for (let i = 0; i <= days.length; i++) {
     if (day == i) {
       currentDay = days[i];
     }
@@ -28,7 +28,7 @@ const clock = () => {
   let seconds = dateTime.getSeconds();
 
   if (hours < 20 && hours >= 8) {
-    if (day < 6) {
+    if (day < 6 && day > 0) {
       closeHour = 19;
       closeMinutes = 59;
       closeSeconds = 59;
@@ -38,11 +38,14 @@ const clock = () => {
       closeSeconds = 59;
     }
 
-    if (day == 7) {
+    if (day == 0) {
       document.querySelector(".day").innerHTML = currentDay;
-      document.querySelector(".hours").innerHTML = "Zamknięte";
+      document.querySelector(".hours").innerHTML = "Zamknięta";
+      pCounterContainer.innerHTML = "Dzisiaj apteka jest:";
       document.querySelector(".minutes").innerHTML = "";
       document.querySelector(".seconds").innerHTML = "";
+
+      return;
     }
   } else if ((hours >= 20) | (hours < 8)) {
     if (hours == 21) {
@@ -59,6 +62,7 @@ const clock = () => {
     closeSeconds = 59;
     pCounterContainer.innerHTML = "Do otwarcia pozostało";
   }
+
   let currentHour = closeHour - hours;
   let currentMinute = closeMinutes - minutes;
   let currentSecond = closeSeconds - seconds;
